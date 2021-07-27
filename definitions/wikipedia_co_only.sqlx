@@ -1,13 +1,19 @@
+config {
+  type: "incremental"
+}
+
 --config {
 --  type: "table"
 --}
-config { type: "incremental" }
-
-SELECT datehour, wiki, title
-FROM dwh.wikipedia_pageviews_2021
-WHERE wiki = 'co';
-
+SELECT
+  datehour,
+  wiki,
+  title
+FROM
+  dwh.wikipedia_pageviews_2021
+WHERE
+  wiki = 'co';
 -- select *
--- from 
---   ${ref("table_name")} / schema.table_name
--- read more about ref() in the documentation tab -->
+  -- from
+  --   ${ref("table_name")} / schema.table_name
+  -- read more about ref() in the documentation tab -->
