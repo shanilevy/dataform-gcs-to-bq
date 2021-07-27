@@ -5,7 +5,9 @@ config { type: "incremental" }
 
 SELECT datehour, wiki, title
 FROM dwh.wikipedia_pageviews_2021
-WHERE wiki = 'ch'
+WHERE wiki = 'co';
+
+TRUNCATE TABLE `dataops-319100.dwh.wikipedia_pageviews_2021`
 -- select *
 -- from 
 --   ${ref("table_name")} / schema.table_name
