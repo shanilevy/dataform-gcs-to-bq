@@ -12,7 +12,7 @@ SELECT
 FROM
   dwh.wikipedia_pageviews_2021
 WHERE
-  wiki = 'co';
+  wiki = 'co'
 -- select *
   -- from
   --   ${ref("table_name")} / schema.table_name
