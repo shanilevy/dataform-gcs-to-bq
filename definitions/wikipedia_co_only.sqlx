@@ -8,7 +8,8 @@ config {
 SELECT
   datehour,
   wiki,
-  title
+  title,
+  views
 FROM
   dwh.wikipedia_pageviews_2021
 WHERE
