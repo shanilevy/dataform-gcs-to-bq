@@ -1,0 +1,11 @@
+config {
+  type: "operations",
+  dependencies: ["wikipedia_multiple_views"]
+}
+
+--TRUNCATE TABLE ${ref(""))}
+TRUNCATE TABLE `dwh.wikipedia_pageviews_2021`
+-- select *
+-- from 
+--   ${ref("table_name")} / schema.table_name
+-- read more about ref() in the documentation tab -->
