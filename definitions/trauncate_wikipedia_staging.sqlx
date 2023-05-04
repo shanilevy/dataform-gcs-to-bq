@@ -4,7 +4,7 @@ config {
 }
 -- test
 --TRUNCATE TABLE ${ref(""))}
-TRUNCATE TABLE `dwh.wikipedia_pageviews_2021`
+TRUNCATE TABLE dwh.wikipedia_pageviews_2021
 -- select *
 -- from 
 --   ${ref("table_name")} / schema.table_name
