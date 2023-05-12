@@ -2,6 +2,6 @@
     "warehouse": "bigquery",
     "defaultSchema": "dwh",
     "assertionSchema": "dataform_assertions",
-    "defaultDatabase": "dataops-terraform",
+    "defaultDatabase": "dataops-terraform-example",
     "defaultLocation": "us"
 }
