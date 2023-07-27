@@ -1,7 +1,16 @@
 config {
-  type: "incremental",
-  //uniqueKey: ["title"]
+  type: "incremental"
 }
 
-SELECT datehour, wiki, title, views FROM dwh.wikipedia_pageviews_2021
-${ when(incremental(), 'WHERE views > 1') } ORDER BY views DESC
+SELECT
+  datehour,
+  wiki,
+  title,
+  views
+FROM
+  dwh.wikipedia_pageviews_2021
+WHERE
+  --wiki = 'co'
+  views > 1
+ORDER BY 
+  views DESC
