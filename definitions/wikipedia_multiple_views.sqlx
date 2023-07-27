@@ -1,8 +1,8 @@
 config {
   type: "table",
   bigquery: {
-    partitionBy: "title",
-    clusterBy: ["wiki"]
+    //partitionBy: "title",
+    clusterBy: ["title","wiki"]
   }
 }
 
@@ -12,4 +12,4 @@ UNION DISTINCT
 
 SELECT wiki,title,views FROM dwh.wikipedia_multiple_views
 
-ORDER BY views DESC
+--ORDER BY views DESC
