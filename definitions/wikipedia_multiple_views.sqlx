@@ -2,10 +2,10 @@ config {
   type: "table"
 }
 
-SELECT wiki,title,view FROM dwh.wikipedia_pageviews_2021
+SELECT wiki,title,views FROM dwh.wikipedia_pageviews_2021
 
 UNION DISTINCT
 
-SELECT wiki,title,view FROM dwh.wikipedia_multiple_views
+SELECT wiki,title,views FROM dwh.wikipedia_multiple_views
 
 ORDER BY views DESC
