@@ -1,16 +1,11 @@
 config {
-  type: "incremental"
+  type: "table"
 }
 
-SELECT
-  datehour,
-  wiki,
-  title,
-  views
-FROM
-  dwh.wikipedia_pageviews_2021
-WHERE
-  --wiki = 'co'
-  views > 1
-ORDER BY 
-  views DESC
+SELECT wiki,title,view FROM dwh.wikipedia_pageviews_2021
+
+UNION
+
+SELECT wiki,title,view FROM dwh.wikipedia_multiple_views
+
+ORDER BY views DESC
