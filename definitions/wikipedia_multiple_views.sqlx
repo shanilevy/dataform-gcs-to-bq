@@ -1,23 +1,7 @@
 config {
-  type: "table"
+  type: "table",
+  uniqueKey: ["title"]
 }
 
---config {
---  type: "table"
---}
-SELECT
-  datehour,
-  wiki,
-  title,
-  views
-FROM
-  dwh.wikipedia_pageviews_2021
-WHERE
-  --wiki = 'co'
-  views > 1
-ORDER BY 
-  views DESC
--- select *
-  -- from
-  --   ${ref("table_name")} / schema.table_name
-  -- read more about ref() in the documentation tab -->
+SELECT datehour, wiki, title, views FROM dwh.wikipedia_pageviews_2021
+${ when(incremental(), 'WHERE views > 1') } ORDER BY views DESC
