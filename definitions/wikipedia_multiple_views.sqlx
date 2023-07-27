@@ -4,7 +4,7 @@ config {
 
 SELECT wiki,title,view FROM dwh.wikipedia_pageviews_2021
 
-UNION
+UNION DISTINCT
 
 SELECT wiki,title,view FROM dwh.wikipedia_multiple_views
 
