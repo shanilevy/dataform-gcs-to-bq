@@ -1,6 +1,6 @@
 config {
   type: "incremental",
-  uniqueKey: ["title"]
+  //uniqueKey: ["title"]
 }
 
 SELECT datehour, wiki, title, views FROM dwh.wikipedia_pageviews_2021
