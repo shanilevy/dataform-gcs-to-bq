@@ -2,8 +2,8 @@ config {
   type: "incremental",
   uniqueKey: ["title"],
   bigquery: {
-    //partitionBy: "title",
-    clusterBy: ["title","wiki"]
+    partitionBy: "wiki",
+    clusterBy: ["title","views"]
   }
 }
 
