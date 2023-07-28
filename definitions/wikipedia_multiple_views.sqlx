@@ -3,11 +3,11 @@ config {
   uniqueKey: ["title"],
   bigquery: {
     partitionBy: "wiki",
-    clusterBy: ["title","views","datehour"]
+    clusterBy: ["title","views"]
   }
 }
 
-SELECT datehour,wiki,title,views FROM dwh.wikipedia_pageviews_2021
+SELECT DISTINCT wiki,title,views FROM dwh.wikipedia_pageviews_2021
 ${ when(incremental(), 'WHERE views > 1') }
 
 --UNION DISTINCT
