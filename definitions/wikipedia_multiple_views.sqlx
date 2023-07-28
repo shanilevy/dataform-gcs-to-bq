@@ -1,14 +1,15 @@
 config {
   type: "incremental",
-  uniqueKey: ["title"],
-  bigquery: {
-    partitionBy: "wiki",
-    clusterBy: ["title","views"]
-  }
+  //uniqueKey: ["title"],
+  //bigquery: {
+  //  partitionBy: "wiki",
+  //  clusterBy: ["title","views"]
+  //}
 }
 
-SELECT DISTINCT wiki,title,views FROM dwh.wikipedia_pageviews_2021
-${ when(incremental(), 'WHERE views > 1') }
+SELECT wiki,title,views FROM dwh.wikipedia_pageviews_2021
+${when(incremental(), 'WHERE views > 0 FROM ${self()}') }
+--${ when(incremental(), 'WHERE views > 1') }
 
 --UNION DISTINCT
 
