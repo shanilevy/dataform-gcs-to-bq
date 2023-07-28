@@ -1,6 +1,6 @@
 config {
-  type: "incremental",
-  uniqueKey: ["title"]
+  type: "table"
+  //uniqueKey: ["title"]
   //bigquery: {
   //  partitionBy: "wiki",
   //  clusterBy: ["title","views"]
@@ -8,10 +8,10 @@ config {
 }
 
 SELECT wiki,title,views FROM dwh.wikipedia_pageviews_2021
-${ when(incremental(), 'WHERE views > 0') }
+--${ when(incremental(), 'WHERE views > 0') }
 
---UNION DISTINCT
+UNION DISTINCT
 
---SELECT wiki,title,views FROM dwh.wikipedia_multiple_views
+SELECT wiki,title,views FROM dwh.wikipedia_multiple_views
 
---ORDER BY views DESC
+ORDER BY views DESC
