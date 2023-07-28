@@ -3,7 +3,7 @@ config {
   uniqueKey: ["title"],
   bigquery: {
     partitionBy: "wiki",
-    clusterBy: ["title","views"]
+    clusterBy: ["title","views","datehour"]
   }
 }
 
